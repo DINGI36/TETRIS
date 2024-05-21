@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>game.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #d5b778;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bababa;}
+.s3 { color: #6aab73;}
+.s4 { color: #56a8f5;}
+.s5 { color: #cf8e6d;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+game.html</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;HTML&gt;</span>
+<span class="s0">&lt;HEAD&gt;</span>
+<span class="s0">&lt;TITLE&gt;</span><span class="s1">Тетрис</span><span class="s0">&lt;/TITLE&gt;</span>
+<span class="s0">&lt;META </span><span class="s2">HTTP-EQUIV</span><span class="s3">=&quot;Content-Type&quot; </span><span class="s2">CONTENT</span><span class="s3">=&quot;text/html;charset=UTF-8&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;META </span><span class="s2">HTTP-EQUIV</span><span class="s3">=&quot;CACHE-CONTROL&quot; </span><span class="s2">CONTENT</span><span class="s3">=&quot;NO-CACHE&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;META </span><span class="s2">NAME</span><span class="s3">=&quot;VIEWPORT&quot; </span><span class="s2">CONTENT</span><span class="s3">=&quot;WIDTH=DEVICE-WIDTH,USER-SCALABLE=NO&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;LINK </span><span class="s2">REL</span><span class="s3">=&quot;stylesheet&quot; </span><span class="s2">TYPE</span><span class="s3">=&quot;text/css&quot; </span><span class="s2">HREF</span><span class="s3">=&quot;style/game.css&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;/HEAD&gt;</span>
+<span class="s0">&lt;BODY </span><span class="s2">STYLE</span><span class="s3">=&quot;</span><span class="s2">background-color</span><span class="s1">:</span><span class="s4">#888888</span><span class="s3">&quot; </span><span class="s2">oncontextmenu </span><span class="s3">= &quot;</span><span class="s5">return false</span><span class="s3">&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;NOSCRIPT&gt;</span>
+    <span class="s0">&lt;H1&gt;</span><span class="s1">Для игры &quot;Тетрис&quot;, обязательно требуется наличие JavaScript !</span><span class="s0">&lt;/H1&gt;</span>
+<span class="s0">&lt;/NOSCRIPT&gt;</span>
+
+<span class="s0">&lt;DIV </span><span class="s2">CLASS</span><span class="s3">=&quot;mdiv&quot; </span><span class="s2">ID</span><span class="s3">=&quot;field&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;CANVAS </span><span class="s2">ID</span><span class="s3">=&quot;background&quot; </span><span class="s2">CLASS</span><span class="s3">=&quot;can1&quot; </span><span class="s2">WIDTH</span><span class="s3">=380 </span><span class="s2">HEIGHT</span><span class="s3">=240</span><span class="s0">&gt;&lt;/CANVAS&gt;</span>
+<span class="s0">&lt;CANVAS </span><span class="s2">ID</span><span class="s3">=&quot;hdc&quot; </span><span class="s2">CLASS</span><span class="s3">=&quot;can2&quot; </span><span class="s2">WIDTH</span><span class="s3">=380 </span><span class="s2">HEIGHT</span><span class="s3">=240</span><span class="s0">&gt;&lt;/CANVAS&gt;</span>
+<span class="s0">&lt;/DIV&gt;</span>
+
+<span class="s0">&lt;DIV </span><span class="s2">CLASS</span><span class="s3">=&quot;pdiv&quot; </span><span class="s2">ID</span><span class="s3">=&quot;direct&quot;</span><span class="s0">&gt;</span>
+
+<span class="s0">&lt;TABLE </span><span class="s2">CLASS</span><span class="s3">=&quot;ctrl&quot; </span><span class="s2">ID</span><span class="s3">=&quot;panel&quot; </span><span class="s2">COLS</span><span class="s3">=1 </span><span class="s2">ROWS</span><span class="s3">=5</span><span class="s0">&gt;</span>
+<span class="s0">&lt;TR&gt;&lt;TD </span><span class="s2">ID</span><span class="s3">=&quot;next&quot; </span><span class="s2">CLASS</span><span class="s3">=&quot;ptx&quot; </span><span class="s2">ALIGN</span><span class="s3">=&quot;center&quot; </span><span class="s2">VALIGN</span><span class="s3">=&quot;top&quot; </span><span class="s2">STYLE</span><span class="s3">=&quot;</span><span class="s2">color</span><span class="s1">:</span><span class="s4">#FFAA44</span><span class="s3">&quot;</span><span class="s0">&gt;</span>
+<span class="s1">Следующея фигура</span><span class="s0">&lt;BR /&gt;</span>
+<span class="s0">&lt;CANVAS </span><span class="s2">ID</span><span class="s3">=&quot;figure&quot; </span><span class="s2">CLASS</span><span class="s3">=&quot;nfig&quot;</span><span class="s0">&gt;&lt;/CANVAS&gt;</span>
+<span class="s0">&lt;/TD&gt;&lt;/TR&gt;</span>
+<span class="s0">&lt;TR&gt;&lt;TD </span><span class="s2">ALIGN</span><span class="s3">=&quot;center&quot; </span><span class="s2">VALIGN</span><span class="s3">=&quot;top&quot; </span><span class="s2">STYLE</span><span class="s3">=&quot;</span><span class="s2">color</span><span class="s1">:</span><span class="s4">#44DD52</span><span class="s3">&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;SPAN </span><span class="s2">ID</span><span class="s3">=&quot;level&quot; </span><span class="s2">CLASS</span><span class="s3">=&quot;ptx&quot;</span><span class="s0">&gt;&lt;/SPAN&gt;&lt;BR /&gt;</span>
+<span class="s0">&lt;SPAN </span><span class="s2">ID</span><span class="s3">=&quot;lines&quot; </span><span class="s2">CLASS</span><span class="s3">=&quot;ptx&quot;</span><span class="s0">&gt;&lt;/SPAN&gt;</span>
+<span class="s0">&lt;/TD&gt;&lt;/TR&gt;</span>
+<span class="s0">&lt;TR&gt;&lt;TD </span><span class="s2">ALIGN</span><span class="s3">=&quot;center&quot;</span><span class="s0">&gt;</span>
+
+<span class="s0">&lt;TABLE </span><span class="s2">CLASS</span><span class="s3">=&quot;tp1&quot; </span><span class="s2">COLS</span><span class="s3">=2 </span><span class="s2">ROWS</span><span class="s3">=3</span><span class="s0">&gt;</span>
+<span class="s0">&lt;TR&gt;&lt;TD </span><span class="s2">COLSPAN</span><span class="s3">=2 </span><span class="s2">ALIGN</span><span class="s3">=&quot;center&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;IMG </span><span class="s2">ID</span><span class="s3">=&quot;rotate&quot; </span><span class="s2">SRC</span><span class="s3">=&quot;&quot; </span><span class="s2">CLASS</span><span class="s3">=&quot;but&quot; </span><span class="s0">/&gt;</span>
+<span class="s0">&lt;/TD&gt;&lt;/TR&gt;</span>
+<span class="s0">&lt;TR&gt;&lt;TD </span><span class="s2">ALIGN</span><span class="s3">=&quot;right&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;IMG </span><span class="s2">ID</span><span class="s3">=&quot;left&quot; </span><span class="s2">SRC</span><span class="s3">=&quot;&quot; </span><span class="s2">CLASS</span><span class="s3">=&quot;but&quot; </span><span class="s0">/&gt;</span>
+<span class="s0">&lt;/TD&gt;</span>
+<span class="s0">&lt;TD </span><span class="s2">ALIGN</span><span class="s3">=&quot;left&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;IMG </span><span class="s2">ID</span><span class="s3">=&quot;right&quot; </span><span class="s2">SRC</span><span class="s3">=&quot;&quot; </span><span class="s2">CLASS</span><span class="s3">=&quot;but&quot; </span><span class="s0">/&gt;</span>
+<span class="s0">&lt;/TD&gt;&lt;/TR&gt;</span>
+<span class="s0">&lt;TR&gt;&lt;TD </span><span class="s2">COLSPAN</span><span class="s3">=2 </span><span class="s2">ALIGN</span><span class="s3">=&quot;center&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;IMG </span><span class="s2">ID</span><span class="s3">=&quot;down&quot; </span><span class="s2">SRC</span><span class="s3">=&quot;&quot; </span><span class="s2">CLASS</span><span class="s3">=&quot;but&quot; </span><span class="s0">/&gt;</span>
+<span class="s0">&lt;/TD&gt;&lt;/TR&gt;</span>
+<span class="s0">&lt;/TABLE&gt;</span>
+
+<span class="s0">&lt;/TD&gt;&lt;/TR&gt;</span>
+<span class="s0">&lt;TR&gt;&lt;TD </span><span class="s2">ID</span><span class="s3">=&quot;pause&quot; </span><span class="s2">CLASS</span><span class="s3">=&quot;sbar&quot; </span><span class="s2">ALIGN</span><span class="s3">=&quot;center&quot; </span><span class="s2">VALIGN</span><span class="s3">=&quot;middle&quot; </span><span class="s2">onclick</span><span class="s3">=&quot;</span><span class="s1">game.control_pause(</span><span class="s5">this</span><span class="s1">)</span><span class="s3">&quot;</span><span class="s0">&gt;</span><span class="s1">Пауза</span><span class="s0">&lt;/TD&gt;&lt;/TR&gt;</span>
+<span class="s0">&lt;TR&gt;&lt;TD </span><span class="s2">ID</span><span class="s3">=&quot;close&quot; </span><span class="s2">CLASS</span><span class="s3">=&quot;sbar&quot; </span><span class="s2">ALIGN</span><span class="s3">=&quot;center&quot; </span><span class="s2">VALIGN</span><span class="s3">=&quot;middle&quot; </span><span class="s2">onclick</span><span class="s3">=&quot;</span><span class="s1">game.control_abort()</span><span class="s3">&quot;</span><span class="s0">&gt;</span><span class="s1">Прервать</span><span class="s0">&lt;/TD&gt;&lt;/TR&gt;</span>
+<span class="s0">&lt;/TABLE&gt;</span>
+
+<span class="s0">&lt;/DIV&gt;</span>
+
+<span class="s0">&lt;/BODY&gt;</span>
+
+<span class="s0">&lt;SCRIPT </span><span class="s2">LANGUAGE</span><span class="s3">=&quot;javascript&quot; </span><span class="s2">SRC</span><span class="s3">=&quot;script/util.js&quot; </span><span class="s2">TYPE</span><span class="s3">=&quot;text/javascript&quot; </span><span class="s2">CHARSET</span><span class="s3">=&quot;UTF-8&quot;</span><span class="s0">&gt;&lt;/SCRIPT&gt;</span>
+<span class="s0">&lt;SCRIPT </span><span class="s2">LANGUAGE</span><span class="s3">=&quot;javascript&quot; </span><span class="s2">SRC</span><span class="s3">=&quot;script/app.js&quot; </span><span class="s2">TYPE</span><span class="s3">=&quot;text/javascript&quot; </span><span class="s2">CHARSET</span><span class="s3">=&quot;UTF-8&quot;</span><span class="s0">&gt;&lt;/SCRIPT&gt;</span>
+<span class="s0">&lt;SCRIPT </span><span class="s2">LANGUAGE</span><span class="s3">=&quot;javascript&quot; </span><span class="s2">SRC</span><span class="s3">=&quot;script/game.js&quot; </span><span class="s2">TYPE</span><span class="s3">=&quot;text/javascript&quot; </span><span class="s2">CHARSET</span><span class="s3">=&quot;UTF-8&quot;</span><span class="s0">&gt;&lt;/SCRIPT&gt;</span>
+
+<span class="s0">&lt;SCRIPT </span><span class="s2">LANGUAGE</span><span class="s3">=&quot;javascript&quot; </span><span class="s2">TYPE</span><span class="s3">=&quot;text/javascript&quot; </span><span class="s2">CHARSET</span><span class="s3">=&quot;UTF-8&quot;</span><span class="s0">&gt;</span>
+
+<span class="s1">game.load();</span>
+
+<span class="s0">&lt;/SCRIPT&gt;</span>
+<span class="s0">&lt;/HTML&gt;</span>
+</pre>
+</body>
+</html>
